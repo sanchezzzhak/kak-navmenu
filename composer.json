@@ -3,7 +3,7 @@
 	"description": "Yii2 navmenu widgets",
 	"type": "yii2-extension",
 	"homepage": "https://github.com/sanchezzzhak/kak-navmenu",
-	"keywords": ["yii2","navmenu bootstrap","navmenu for yii2" , "widget"],
+	"keywords": ["yii2","navmenu bootstrap", "navmenu for yii2", "widget"],
 	"license": "MIT",
 	"authors": [
 		{
