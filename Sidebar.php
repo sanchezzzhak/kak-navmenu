@@ -8,6 +8,7 @@ use yii\helpers\ArrayHelper;
  */
 class Sidebar extends \yii\base\Widget
 {
+    const THEME_BLACK = 'theme-black';
 
     public $theme;
     public $items = [];
@@ -20,16 +21,26 @@ class Sidebar extends \yii\base\Widget
     public function run()
     {
        $this->initOptions();
-        echo Html::beginTag('div', $this->options);
-            echo '<nav><ul class="nav">';
-                foreach ($this->items as $item) {
-                    echo $this->renderNavItem($item);
-                }
-                echo $this->renderMinifyBtn();
 
-            echo '</ul></nav>';
+        echo Html::beginTag('div', $this->options);
+
+            echo Html::beginTag('div',[
+                'class' => '',
+                'data-height'=>'100%',
+                'data-scrollbar'=>'true',
+                'style' => 'overflow: hidden; width: auto; height: 100%'
+            ]);
+                echo '<nav><ul class="nav">';
+                    foreach ($this->items as $item) {
+                        echo $this->renderNavItem($item);
+                    }
+                    echo $this->renderMinifyBtn();
+
+                echo '</ul></nav>';
+
+            echo Html::endTag('div');
         echo Html::endTag('div');
-        echo Html::endTag('div','',['class' => 'sidebar-bg']);
+        echo Html::tag('div','',['class' => 'sidebar-bg']);
 
     }
 
@@ -39,6 +50,10 @@ class Sidebar extends \yii\base\Widget
     private function initOptions()
     {
         Html::addCssClass($this->countOptions, 'badge');
+
+        if(!empty($this->theme)){
+            Html::addCssClass($this->options, $this->theme );
+        }
         Html::addCssClass($this->options, 'sidebar');
 
         StoreAsset::register($this->getView());

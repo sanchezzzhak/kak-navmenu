@@ -2,6 +2,15 @@
 .wrap-sidebar-page-content {
   margin-left: 220px; }
 
+.sidebar-bg {
+  background: #ffffff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 220px;
+  z-index: 0; }
+
 .sidebar {
   width: 220px;
   position: absolute;
@@ -11,7 +20,8 @@
   padding-top: 54px;
   z-index: 10;
   -webkit-transform: translateZ(0);
-  background: #ffffff; }
+  background: #ffffff;
+  /** theme black */ }
   .sidebar.theme-black {
     background: #2d353c; }
   .sidebar .nav > li:after,
@@ -34,17 +44,22 @@
     top: 50%;
     margin-top: -18px;
     margin-left: -7px;
-    color: #B1B9C0; }
-  .sidebar.theme-black .sub-menu > li > a:before {
-    background: #a8acb1; }
+    color: #b1b9c0; }
+  .sidebar .nav > li.active > a,
+  .sidebar .nav > li.active > a:focus,
+  .sidebar .nav > li.active > a:hover {
+    color: #fff !important;
+    background: #00acac !important; }
+  .sidebar .nav > li.expand > a,
+  .sidebar .nav > li > a:focus,
+  .sidebar .nav > li > a:hover {
+    background: #e6e9ea; }
   .sidebar .sub-menu > li.active > a,
   .sidebar .sub-menu > li.active > a:focus,
   .sidebar .sub-menu > li.active > a:hover,
   .sidebar .sub-menu > li > a:focus,
   .sidebar .sub-menu > li > a:hover {
     color: #000; }
-  .sidebar.theme-black .nav > li > a {
-    color: #a8acb1; }
   .sidebar .nav > li > a .caret {
     float: right;
     margin-top: 9px; }
@@ -65,10 +80,10 @@
     line-height: 20px;
     font-size: 15px;
     float: left; }
-  .sidebar .nav > li .sub-menu:before {
-    background: #default-color-line; }
   .sidebar.theme-black .nav > li .sub-menu:before {
     background: #10181F; }
+  .sidebar .nav > li .sub-menu:before {
+    background: #b1b9c0; }
   .sidebar .sub-menu:before {
     content: '';
     position: absolute;
@@ -76,7 +91,7 @@
     top: 0;
     bottom: 0;
     width: 2px;
-    background: #B1B9C0; }
+    background: #b1b9c0; }
   .sidebar .sub-menu > li > a {
     padding: 5px 20px;
     display: block;
@@ -88,17 +103,33 @@
     margin: 10px 0;
     float: right;
     padding: 5px 20px 5px 10px !important;
-    background: #FAFAFA;
+    background: #fafafa;
     color: #333;
     -webkit-border-radius: 20px 0 0 20px;
     -moz-border-radius: 20px 0 0 20px;
     border-radius: 20px 0 0 20px; }
-  .sidebar.theme-black .sidebar-minify-btn {
-    background: #1b1f24; }
   .sidebar .nav > li.expand > a
   .nav > li > a:focus,
   .sidebar .nav > li > a:hover {
     background: #f0f3f4; }
+  .sidebar.theme-black .nav > li.expand > a,
+  .sidebar.theme-black .nav > li > a:focus,
+  .sidebar.theme-black .nav > li > a:hover {
+    background: #2d353c;
+    color: #a8acb1; }
+  .sidebar.theme-black .sub-menu > li > a:before {
+    color: #2d353c; }
+  .sidebar.theme-black .sub-menu > li.active > a,
+  .sidebar.theme-black .sub-menu > li.active > a:hover,
+  .sidebar.theme-black .sub-menu > li > a:focus,
+  .sidebar.theme-black .sub-menu > li > a:hover {
+    color: #fff; }
+  .sidebar.theme-black .nav > li > a {
+    color: #fff; }
+  .sidebar.theme-black .sidebar-minify-btn {
+    background: #1b1f24; }
+  .sidebar.theme-black.theme-black + .sidebar-bg {
+    background: #2d353c; }
 
 .page-sidebar-minified .sidebar {
   width: 60px;
@@ -130,10 +161,14 @@
   display: none;
   padding: 10px 0 10px 30px;
   margin: 0;
+  background: #f0f3f4; }
+.page-sidebar-minified .sidebar.theme-black .nav > li.expand > a {
+  color: #fff; }
+.page-sidebar-minified .sidebar.theme-black .nav li.has-sub > .sub-menu {
   background: #1a2229; }
 .page-sidebar-minified .sidebar .nav > li.has-sub:focus > a,
 .page-sidebar-minified .sidebar .nav > li.has-sub:hover > a {
-  background: #232a2f; }
+  /*background: #232a2f*/ }
 .page-sidebar-minified .sidebar li.has-sub > .sub-menu {
   display: none !important; }
 .page-sidebar-minified .sidebar li.has-sub:focus > .sub-menu,
@@ -147,6 +182,12 @@
 .page-sidebar-minified .sidebar .sidebar-minify-btn i:before {
   content: ""; }
 
+/*
+.sidebar .nav > li.active > a .badge, .sidebar .nav > li.active > a .label.label-theme {
+  background: url(../img/transparent/black-0.4.png);
+  background: rgba(0, 0, 0, .4)
+}
+*/
 /*
 .page-sidebar-minified.page-with-right-sidebar .content {
   margin-right: 60px;

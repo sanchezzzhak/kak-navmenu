@@ -6,7 +6,8 @@
         subMenu: '.sub-menu',
         expandItems: '.nav > li.has-sub > .sub-menu',
         stageSideBarMinified: '.page-sidebar-minified',
-        btnMinify :'[data-click="sidebar-minify"]'
+        btnMinify :'[data-click="sidebar-minify"]',
+        sidebarSlimScroll :'[data-scrollbar="true"]'
     }
     var stageSidebarKey = 'kak-sidebar-stage';
 
@@ -23,13 +24,35 @@
                 this.onHandleExpandItem(e);
             }, this));
 
-            $(this.element).on('click', selectors.btnMinify, this.onHandleSidebarMinify);
+            $(this.element).on('click', selectors.btnMinify, $.proxy(function(e){
+                this.onHandleSidebarMinify(e);
+            }, this));
 
             var stage = store.get(stageSidebarKey),
                 a = "page-sidebar-minified",
                 t = 'body';
 
             stage === 'hide' ? ($(t).addClass(a)) :($(t).removeClass(a));
+
+            if(0 !== $(selectors.stageSideBarMinified).length){
+                this.initSlimScroll();
+            }
+        },
+        isSlimScrollSupport: function(){
+            return  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        },
+        initSlimScroll: function(){
+            var e = $(this.element).find(selectors.sidebarSlimScroll),
+                a = $(e).attr("data-height");
+                a = a ? a : $(e).height();
+            var t = {
+                height : a,
+                alwaysVisible : !0
+            };
+            this.isSlimScrollSupport()
+                ? ($(e).css("height", a), $(e).css("overflow-x", "scroll"))
+                : $(e).slimScroll(t)
+
         },
         onHandleExpandItem: function(e) {
             var e = $(e.currentTarget).next(selectors.subMenu);
@@ -51,20 +74,14 @@
             if($(t).hasClass(a)){
                 $(t).removeClass(a);
                 store.set(stageSidebarKey,'show')
+                this.initSlimScroll();
             }else{
                 $(t).addClass(a)
-                store.set(stageSidebarKey,'hide')
+                $(this.element).find(selectors.sidebarSlimScroll).slimScroll({destroy : !0});
+                $(this.element).find(selectors.sidebarSlimScroll).trigger("mouseover").removeAttr("style")
+                store.set(stageSidebarKey,'hide');
+                $(window).trigger("resize");
             }
-
-            //
-            //     t = "#wrap";
-            //
-            // $(t).hasClass(a)
-            //     ? ($(t).removeClass(a), $(t).hasClass("page-sidebar-fixed") && generateSlimScroll($('#sidebar [data-scrollbar="true"]')))
-            //     : ($(t).addClass(a), $(t).hasClass("page-sidebar-fixed") && ($('#sidebar [data-scrollbar="true"]').slimScroll({
-            //     destroy : !0}), $('#sidebar [data-scrollbar="true"]').removeAttr("style")), $("#sidebar [data-scrollbar=true]").trigger("mouseover"));
-            //
-            //     $(window).trigger("resize");
         }
     };
 
