@@ -26,14 +26,21 @@ Usage Sidebar
 -----
 Once the extension is installed, simply use it in your code by  :
 ```php
-
 <body>
 <div class="wrap">
     <!-- top menu -->
         <!-- ... -->   
   
     <?php echo \kak\widgets\navmenu\Sidebar::widget([
-            'items' => [],
+            'items' => [
+                [
+                   'active' => true,
+                   'label' => 'RBAC', 
+                   'url' => ['/rbac'],
+                   'icon' => 'fa fa-shield'
+                ],[
+                   'items' => [/* ... */] 
+                ]
         ]);
     ?>
 </div>
