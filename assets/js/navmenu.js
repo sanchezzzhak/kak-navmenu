@@ -8,17 +8,29 @@
         stageSideBarMinified: '.page-sidebar-minified',
         btnMinify :'[data-click="sidebar-minify"]'
     }
+    var stageSidebarKey = 'kak-sidebar-stage';
 
     var kakSidebar = function (element, options) {
         this.element = $(element);
-        $(this.element).on('click', selectors.linkSubMenu, $.proxy(function(e){
-            this.onHandleExpandItem(e);
-        }, this));
-        $(this.element).on('click', selectors.btnMinify, this.onHandleSidebarMinify);
+        this.init();
     }
+    var store = window.store;
 
     kakSidebar.prototype = {
         constructor: kakSidebar,
+        init: function(){
+            $(this.element).on('click', selectors.linkSubMenu, $.proxy(function(e){
+                this.onHandleExpandItem(e);
+            }, this));
+
+            $(this.element).on('click', selectors.btnMinify, this.onHandleSidebarMinify);
+
+            var stage = store.get(stageSidebarKey),
+                a = "page-sidebar-minified",
+                t = 'body';
+
+            stage === 'hide' ? ($(t).addClass(a)) :($(t).removeClass(a));
+        },
         onHandleExpandItem: function(e) {
             var e = $(e.currentTarget).next(selectors.subMenu);
             if(0 === $(selectors.stageSideBarMinified).length){
@@ -33,7 +45,18 @@
         },
         onHandleSidebarMinify: function (e) {
             e.preventDefault();
-            // var a = "page-sidebar-minified",
+            var a = "page-sidebar-minified",
+                t = 'body';
+
+            if($(t).hasClass(a)){
+                $(t).removeClass(a);
+                store.set(stageSidebarKey,'show')
+            }else{
+                $(t).addClass(a)
+                store.set(stageSidebarKey,'hide')
+            }
+
+            //
             //     t = "#wrap";
             //
             // $(t).hasClass(a)
@@ -52,7 +75,6 @@
     };
     $.fn.kakSidebar.Constructor = kakSidebar;
 
-    // auto init
     $('.sidebar').each(function(k,i){
         $(i).kakSidebar();
     });

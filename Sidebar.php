@@ -17,9 +17,6 @@ class Sidebar extends \yii\base\Widget
     public $countOptions = ['class' => 'badge-danger'];
     public $templateLabel = '{icon} {label} {count}';
 
-
-
-
     public function run()
     {
        $this->initOptions();
@@ -32,6 +29,8 @@ class Sidebar extends \yii\base\Widget
 
             echo '</ul></nav>';
         echo Html::endTag('div');
+        echo Html::endTag('div','',['class' => 'sidebar-bg']);
+
     }
 
 
@@ -42,7 +41,9 @@ class Sidebar extends \yii\base\Widget
         Html::addCssClass($this->countOptions, 'badge');
         Html::addCssClass($this->options, 'sidebar');
 
+        StoreAsset::register($this->getView());
         NavMenuAsset::register($this->getView());
+
     }
 
 
