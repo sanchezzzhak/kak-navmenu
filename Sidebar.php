@@ -56,6 +56,7 @@ class Sidebar extends \yii\base\Widget
         }
         Html::addCssClass($this->options, 'sidebar');
 
+        SlimScrollAsset::register($this->getView());
         StoreAsset::register($this->getView());
         NavMenuAsset::register($this->getView());
 
