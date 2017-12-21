@@ -1,0 +1,31 @@
+.kak-nav-sidebar.theme-black {
+  background: #2d353c; }
+  .kak-nav-sidebar.theme-black .nav > li.expand > a,
+  .kak-nav-sidebar.theme-black .nav > li > a:focus,
+  .kak-nav-sidebar.theme-black .nav > li > a:hover {
+    background: #2d353c;
+    color: #a8acb1; }
+  .kak-nav-sidebar.theme-black .sub-menu > li > a:before {
+    color: #a8acb1; }
+  .kak-nav-sidebar.theme-black .sub-menu > li.active > a,
+  .kak-nav-sidebar.theme-black .sub-menu > li.active > a:hover,
+  .kak-nav-sidebar.theme-black .sub-menu > li > a:focus,
+  .kak-nav-sidebar.theme-black .sub-menu > li > a:hover {
+    color: #fff; }
+  .kak-nav-sidebar.theme-black .nav > li > a {
+    color: #fff; }
+  .kak-nav-sidebar.theme-black .sidebar-minify-btn {
+    background: #1b1f24; }
+  .kak-nav-sidebar.theme-black .sub-menu {
+    background: #1a2229; }
+  .kak-nav-sidebar.theme-black .nav > li .sub-menu:before {
+    background: #10181F; }
+.kak-nav-sidebar.theme-black + .kak-sidebar-bg {
+  background: #2d353c; }
+
+.page-sidebar-minified .kak-nav-sidebar.theme-black .nav > li.expand > a {
+  color: #fff; }
+.page-sidebar-minified .kak-nav-sidebar.theme-black .nav li.has-sub > .sub-menu {
+  background: #1a2229; }
+
+/*# sourceMappingURL=nav-sidebar-theme-black.css.map */

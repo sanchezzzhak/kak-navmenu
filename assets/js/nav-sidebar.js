@@ -92,7 +92,7 @@
     };
     $.fn.kakSidebar.Constructor = kakSidebar;
 
-    $('.sidebar').each(function(k,i){
+    $('.kak-nav-sidebar').each(function(k,i){
         $(i).kakSidebar();
     });
 

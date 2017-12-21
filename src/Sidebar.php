@@ -40,7 +40,7 @@ class Sidebar extends \yii\base\Widget
 
             echo Html::endTag('div');
         echo Html::endTag('div');
-        echo Html::tag('div','',['class' => 'sidebar-bg']);
+     //   echo Html::tag('div','',['class' => 'kak-nav-sidebar-bg']);
 
     }
 
@@ -54,11 +54,18 @@ class Sidebar extends \yii\base\Widget
         if(!empty($this->theme)){
             Html::addCssClass($this->options, $this->theme );
         }
-        Html::addCssClass($this->options, 'sidebar');
+        Html::addCssClass($this->options, 'kak-nav-sidebar');
 
-        SlimScrollAsset::register($this->getView());
-        StoreAsset::register($this->getView());
-        NavMenuAsset::register($this->getView());
+        bundles\SlimScrollAsset::register($this->getView());
+        bundles\StoreAsset::register($this->getView());
+        bundles\NavSideBarAsset::register($this->getView());
+
+        switch ($this->theme){
+            case self::THEME_BLACK:
+                bundles\NavSideBarThemeBlackAsset::register($this->getView());
+                break;
+        }
+
 
     }
 

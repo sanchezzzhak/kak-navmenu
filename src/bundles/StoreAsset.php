@@ -1,5 +1,5 @@
 <?php
-namespace kak\widgets\navmenu;
+namespace kak\widgets\navmenu\bundles;
 use yii\web\AssetBundle;
 
 class StoreAsset extends AssetBundle

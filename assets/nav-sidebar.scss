@@ -5,28 +5,17 @@ $default-sub-menu-color: #f0f3f4;
 $default-menu-color:#ffffff;
 $default-hover-menu-color:#e6e9ea;
 
-$theme-black-color-minify-btn: #1b1f24;
-$theme-black-color-line: #10181F;
-$theme-black-link-color: #a8acb1;
-$theme-black-sub-menu-color: #1a2229;
-$theme-black-menu-color: #2d353c;
-$theme-black-hover-menu-color:#2d353c;
+
+
+
+/*  === show stahe sidebar === */
 
 .wrap-sidebar-page-content {
   margin-left: 220px;
 }
 
-.sidebar-bg {
-  background: $default-menu-color;
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 220px;
-  z-index: 0
-}
 
-.sidebar {
+.kak-nav-sidebar {
   width: 220px;
   position: absolute;
   left: 0;
@@ -37,10 +26,8 @@ $theme-black-hover-menu-color:#2d353c;
   -webkit-transform: translateZ(0);
   background: $default-menu-color;
 
+  .nav-header {
 
-
-  &.theme-black {
-    background: $theme-black-menu-color;
   }
 
   .nav > li:after,
@@ -106,9 +93,7 @@ $theme-black-hover-menu-color:#2d353c;
     position: relative;
     display: none
   }
-  &.theme-black .sub-menu {
-    background: $theme-black-sub-menu-color;
-  }
+
   .nav>li>a i {
     margin-right: 15px;
     width: 14px;
@@ -117,9 +102,7 @@ $theme-black-hover-menu-color:#2d353c;
     font-size: 15px;
     float: left;
   }
-  &.theme-black .nav>li .sub-menu:before {
-    background: $theme-black-color-line;
-  }
+
   .nav>li .sub-menu:before {
     background: $default-color-line;
   }
@@ -159,56 +142,24 @@ $theme-black-hover-menu-color:#2d353c;
     background: #f0f3f4;
   }
 
-  /** theme black */
-  &.theme-black {
-
-
-    .nav > li.expand > a,
-    .nav > li > a:focus,
-    .nav > li > a:hover {
-      background: $theme-black-menu-color;
-      color: $theme-black-link-color;
-    }
-    .sub-menu>li>a:before {
-      color: $default-link-color;
-    }
-    .sub-menu > li.active > a,
-      /*.sub-menu > li.active > a:focus,*/
-    .sub-menu > li.active > a:hover,
-    .sub-menu > li > a:focus,
-    .sub-menu > li > a:hover {
-      color: #fff;
-    }
-
-    .nav > li > a {
-      color: #fff;
-    }
-    .sidebar-minify-btn{
-      background: $theme-black-color-minify-btn;
-    }
-    &.theme-black + .sidebar-bg {
-      background: $theme-black-menu-color;
-    }
-  }
-
-
-
 }
+
+/* === hide stage sidebar === */
 
 .page-sidebar-minified {
 
-  .sidebar {
-    width: 60px;
-    position: absolute
-  }
-  .sidebar-bg {
+  .kak-nav-sidebar-bg {
     width: 60px
   }
   .wrap-sidebar-page-content {
     margin-left: 60px;
   }
 
-  .sidebar {
+  .kak-nav-sidebar {
+
+    width: 60px;
+    position: absolute;
+
     .caret {
       position: absolute;
       top: 9px;
@@ -240,14 +191,6 @@ $theme-black-hover-menu-color:#2d353c;
       background: $default-sub-menu-color;
     }
 
-    &.theme-black .nav > li.expand > a {
-      color: #fff;
-    }
-
-    &.theme-black .nav li.has-sub > .sub-menu {
-      background: $theme-black-sub-menu-color;
-    }
-
     .nav > li.has-sub:focus > a,
     .nav > li.has-sub:hover > a {
       /*background: #232a2f*/
@@ -276,6 +219,17 @@ $theme-black-hover-menu-color:#2d353c;
     }
   }
 }
+
+.kak-nav-sidebar-bg {
+  background: $default-menu-color;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 220px;
+  z-index: 0
+}
+
 /*
 .sidebar .nav > li.active > a .badge, .sidebar .nav > li.active > a .label.label-theme {
   background: url(../img/transparent/black-0.4.png);
@@ -339,3 +293,48 @@ $theme-black-hover-menu-color:#2d353c;
 .page-sidebar-minified .sidebar .slimScrollBar, .page-sidebar-minified .sidebar .slimScrollRail {
   display: none !important
 }*/
+
+
+
+.kak-nav-menu {
+  background: #2d353c;
+  height: 40px;
+  position: relative;
+  top: 54px;
+  left: 0;
+  right: 0;
+  z-index: 1015;
+
+  .navbar-nav > li > a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    line-height: 20px;
+  }
+
+  .menu-control {
+    position: absolute;
+    top: 0;
+    width: 40px;
+    background: #2d353c;
+    height: 40px;
+    margin: 0;
+
+    &.menu-control-left {
+      -webkit-animation: slideInLeft .2s;
+      animation: slideInLeft .2s;
+      left: -50px;
+    }
+    &.menu-control-right {
+      -webkit-animation: slideInLeft .2s;
+      animation: slideInLeft .2s;
+      right: -50px;
+    }
+
+  }
+
+}
+/*
+.nav-menu + .sidebar {
+  padding-top:90px;
+}
+*/
