@@ -14,4 +14,7 @@ class TabsResponsiveAsset extends AssetBundle
     public $js = [
         'js/tabs-responsive.js'
     ];
+    public $depends = [
+        'yii\web\JqueryAsset'
+    ];
 }
