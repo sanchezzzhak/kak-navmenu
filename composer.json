@@ -13,8 +13,8 @@
 	],
 	"require": {
 		"php":">=5.4.0",
-		"bower-asset/store.js": "~2.0.*",
-		"bower-asset/slimScroll": ">=1.3.3"
+		"bower-asset/store.js": "*",
+		"bower-asset/slimScroll": "*"
 	},
 	"autoload": {
 		"psr-4": {
