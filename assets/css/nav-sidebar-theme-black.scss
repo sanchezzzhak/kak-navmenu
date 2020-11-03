@@ -1,0 +1,73 @@
+$theme-black-color-minify-btn: #1b1f24;
+$theme-black-color-line: #10181F;
+$theme-black-link-color: #a8acb1;
+$theme-black-sub-menu-color: #1a2229;
+$theme-black-menu-color: #222;
+$theme-black-hover-menu-color:#2d353c;
+
+.kak-nav-sidebar {
+
+  &.theme-black {
+    background: $theme-black-menu-color;
+
+    .nav > li.active > a,
+    .nav > li.active > a:focus,
+    .nav > li.active > a:hover {
+      color: #fff;
+      background: #313335;
+    }
+
+    .nav > li.expand > a,
+    .nav > li > a:focus,
+    .nav > li > a:hover {
+      background: $theme-black-menu-color;
+      color: $theme-black-link-color;
+    }
+    .sub-menu>li>a:before {
+      color: $theme-black-link-color;
+    }
+
+    .nav > li > a {
+      color: #fff;
+    }
+    .sub-menu > li.active > a,
+    .sub-menu > li.active > a:focus
+    .sub-menu > li.active > a:hover,
+    .sub-menu > li > a:focus,
+    .sub-menu > li > a:hover {
+      color: #fff;
+    }
+
+    .sidebar-minify-btn{
+      background: $theme-black-color-minify-btn;
+    }
+
+    .sub-menu {
+      background: $theme-black-sub-menu-color;
+    }
+    .nav>li .sub-menu:before {
+      background: $theme-black-color-line;
+    }
+  }
+  &.theme-black + .kak-sidebar-bg {
+    background: $theme-black-menu-color;
+  }
+
+}
+
+.kak-nav-sidebar-bg {
+  background: $theme-black-menu-color;
+}
+
+.page-sidebar-minified {
+  .kak-nav-sidebar {
+    &.theme-black .nav > li.expand > a {
+      color: #fff;
+    }
+    &.theme-black .nav li.has-sub > .sub-menu {
+      background: $theme-black-sub-menu-color;
+    }
+
+  }
+
+}

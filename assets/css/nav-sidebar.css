@@ -37,8 +37,8 @@
   .kak-nav-sidebar .nav > li.active > a,
   .kak-nav-sidebar .nav > li.active > a:focus,
   .kak-nav-sidebar .nav > li.active > a:hover {
-    color: #fff !important;
-    background: #00acac !important; }
+    color: #fff;
+    background: #00acac; }
   .kak-nav-sidebar .nav > li.expand > a,
   .kak-nav-sidebar .nav > li > a:focus,
   .kak-nav-sidebar .nav > li > a:hover {

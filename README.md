@@ -26,27 +26,44 @@ Usage Sidebar
 -----
 Once the extension is installed, simply use it in your code by  :
 ```php
+use kak\widgets\navmenu\Sidebar;
+use yii\web\View;
+use yii\web\Controller;
+/**
+ * @var $this View 
+ * @var $context Controller 
+*/
+$context =  $this->context;
+?>
 <body>
 <div class="wrap">
-    <!-- top menu -->
-        <!-- ... -->   
-  
-    <?php echo \kak\widgets\navmenu\Sidebar::widget([
-            'items' => [
-                [
-                   'active' => true,
+    <!-- $this->render('_top-menu') -->
+    <!-- $this->render('_alerts') -->
+    <!-- $this->render('_breadcrumbs') -->
+
+    <?= Sidebar::widget([
+            'theme' => Sidebar::THEME_BLACK,
+            'items' => [[
+                   'active' =>  $context->id === 'rbac' && $context->action->id === 'index',
                    'label' => 'RBAC', 
                    'url' => ['/rbac'],
                    'icon' => 'fa fa-shield'
                 ],[
                    'items' => [/* ... */] 
-                ]
-        ]);
-    ?>
-</div>
-<div class="content wrap-sidebar-page-content"> <!-- <-- add class "wrap-sidebar-page-content" -->
-    content page
-</div>    
+                ]]
+        ]);?>
+    <div class="content wrap-sidebar-page-content"> <!-- <-- add class "wrap-sidebar-page-content" -->
+        <div class="container-fluid">
+             <?= $content ?>
+        </div>
+        or 
+        <div class="container">
+            <?= $content ?>
+        </div>
+    </div> 
+
+    <!-- $this->render('_footer') -->
+</div>   
 ```
 
 Usage TopMenu

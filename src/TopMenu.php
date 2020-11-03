@@ -1,4 +1,5 @@
 <?php
+
 namespace kak\widgets\navmenu;
 
 use yii\bootstrap\Nav;
@@ -11,7 +12,6 @@ class TopMenu extends NavBar
     public $encodeLabels = false;
     public $items;
 
-
     public $menuControl = true;
 
     public function init()
@@ -21,11 +21,8 @@ class TopMenu extends NavBar
 
     }
 
-
     public function run()
     {
-
-
         $this->items[] = [
             'label' => '<<<',
             'options' => [
@@ -39,7 +36,7 @@ class TopMenu extends NavBar
             ]
         ];
 
-        echo  Nav::widget([
+        echo Nav::widget([
             'items' => $this->items,
             'options' => ['class' => 'navbar-nav navbar-right'],
             'encodeLabels' => $this->encodeLabels

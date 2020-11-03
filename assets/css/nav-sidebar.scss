@@ -6,8 +6,6 @@ $default-menu-color:#ffffff;
 $default-hover-menu-color:#e6e9ea;
 
 
-
-
 /*  === show stahe sidebar === */
 
 .wrap-sidebar-page-content {
@@ -60,8 +58,8 @@ $default-hover-menu-color:#e6e9ea;
   .nav > li.active > a,
   .nav > li.active > a:focus,
   .nav > li.active > a:hover {
-    color: #fff!important;
-    background: #00acac!important;
+    color: #fff;
+    background: #00acac;
   }
 
 
