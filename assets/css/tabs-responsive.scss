@@ -1,98 +1,162 @@
-$xs: 768px;
+$xs: 480px;
 
-.responsive-tabs.nav-tabs {
+.nav-tabs-responsive {
   position: relative;
-  z-index: 10;
-  overflow: visible;
-  border-bottom: none;
+  margin: 0 auto;
+  padding: 5px;
+
+  .scroller-right, .scroller-left {
+    text-align: center;
+    cursor: pointer;
+    //display: none;
+    padding: 11px 7px;
+    white-space: nowrap;
+    vertical-align: middle;
+    background-color: #fff;
+    position: absolute;
+    top: 4px;
+  }
+
+  .scroller-right {
+    right: 0;
+  }
+
+  .scroller-left {
+    left: 0;
+  }
+
+
+  .nav-tabs-responsive * {
+    box-sizing: border-box;
+  }
 
   @media(min-width: $xs) {
+
+  }
+  @media(max-width: $xs) {
+    .scroller-right, .scroller-left {
+      display: none!important;
+    }
+  }
+
+  .responsive-tabs.nav-tabs {
     border-bottom: 1px solid #ddd;
-  }
+    user-select: none;
 
-  span.glyphicon {
-    position: absolute;
-    top: 1px;
-    right: 1px;
-    padding: 12px;
-    background: #d2d2d2;
-
-    &.glyphicon-triangle-top {
-      display: none;
+    &.scroll-active a {
+      pointer-events: none;
     }
+
+    li a {
+      user-select: none;
+      -webkit-user-drag: none;
+      user-drag: none;
+    }
+
+    /*position: relative;
+    z-index: 10;
+    overflow: visible;
+    border-bottom: none;*/
 
     @media(min-width: $xs) {
-      display: none;
-    }
-  }
+      overflow: hidden;
+      white-space: nowrap;
 
-  > li {
-    display: none;
-    float: none;
-    text-align: center;
-
-    &:last-of-type > a {
-      margin-right: 0;
-    }
-
-    > a {
-      margin-right: 0;
-      border: 1px solid #DDDDDD;
-
-      @media(min-width: $xs) {
-        margin-right: 4px;
+      span.glyphicon {
+        display: none;
       }
+      > li {
+        display: inline-block;
+        float: none;
+      }
+
     }
 
-    &.active {
-      display: block;
+    @media(max-width: $xs) {
+      span.glyphicon {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        padding: 14px;
+        color: #fff;
+        background: #222;
 
-      a {
-        @media(min-width: $xs) {
-          border-bottom-color: transparent;
+        &.glyphicon-triangle-top {
+          display: none;
         }
-        border: 1px solid #DDDDDD;
-        border-radius: 2px;
-      }
-    }
 
-    @media(min-width: $xs) {
-      display: block;
-      float: left;
-    }
-
-  }
-
-  &.open {
-
-    span.glyphicon {
-      &.glyphicon-triangle-top {
-        display: block;
         @media(min-width: $xs) {
           display: none;
         }
       }
 
-      &.glyphicon-triangle-bottom {
+      > li {
         display: none;
+        float: none;
+        text-align: center;
+
+        &:last-of-type > a {
+          margin-right: 0;
+        }
+
+        > a {
+          margin-right: 0;
+          border: 1px solid #DDDDDD;
+
+          @media(min-width: $xs) {
+            /* margin-right: 4px;*/
+          }
+        }
+
+        &.active {
+          display: block;
+
+          a {
+            @media(min-width: $xs) {
+              border-bottom-color: transparent;
+            }
+            border: 1px solid #DDDDDD;
+            border-radius: 2px;
+          }
+        }
+
+        @media(min-width: $xs) {
+          display: block;
+          float: left;
+        }
+
       }
-    }
 
-    > li {
-      display: block;
+      &.open {
+        span.glyphicon {
+          &.glyphicon-triangle-top {
+            display: block;
+            @media(min-width: $xs) {
+              display: none;
+            }
+          }
 
-      a {
-        border-radius: 0;
-      }
+          &.glyphicon-triangle-bottom {
+            display: none;
+          }
+        }
 
-      &:first-of-type a {
-        border-radius: 2px 2px 0 0;
-      }
+        > li {
+          display: block;
 
-      &:last-of-type a {
-        border-radius: 0 0 2px 2px;
+          a {
+            border-radius: 0;
+          }
+
+          &:first-of-type a {
+            border-radius: 2px 2px 0 0;
+          }
+
+          &:last-of-type a {
+            border-radius: 0 0 2px 2px;
+          }
+        }
       }
     }
   }
-
 }

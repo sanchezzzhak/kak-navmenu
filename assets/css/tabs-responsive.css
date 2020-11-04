@@ -1,60 +1,102 @@
-.responsive-tabs.nav-tabs {
+.nav-tabs-responsive {
   position: relative;
-  z-index: 10;
-  overflow: visible;
-  border-bottom: none; }
-  @media (min-width: 768px) {
-    .responsive-tabs.nav-tabs {
-      border-bottom: 1px solid #ddd; } }
-  .responsive-tabs.nav-tabs span.glyphicon {
+  margin: 0 auto;
+  padding: 5px; }
+  .nav-tabs-responsive .scroller-right, .nav-tabs-responsive .scroller-left {
+    text-align: center;
+    cursor: pointer;
+    padding: 11px 7px;
+    white-space: nowrap;
+    vertical-align: middle;
+    background-color: #fff;
     position: absolute;
-    top: 1px;
-    right: 1px;
-    padding: 12px;
-    background: #d2d2d2; }
-    .responsive-tabs.nav-tabs span.glyphicon.glyphicon-triangle-top {
-      display: none; }
-    @media (min-width: 768px) {
-      .responsive-tabs.nav-tabs span.glyphicon {
-        display: none; } }
-  .responsive-tabs.nav-tabs > li {
-    display: none;
-    float: none;
-    text-align: center; }
-    .responsive-tabs.nav-tabs > li:last-of-type > a {
-      margin-right: 0; }
-    .responsive-tabs.nav-tabs > li > a {
-      margin-right: 0;
-      border: 1px solid #DDDDDD; }
-      @media (min-width: 768px) {
-        .responsive-tabs.nav-tabs > li > a {
-          margin-right: 4px; } }
-    .responsive-tabs.nav-tabs > li.active {
-      display: block; }
-      .responsive-tabs.nav-tabs > li.active a {
-        border: 1px solid #DDDDDD;
-        border-radius: 2px; }
-        @media (min-width: 768px) {
-          .responsive-tabs.nav-tabs > li.active a {
-            border-bottom-color: transparent; } }
-    @media (min-width: 768px) {
-      .responsive-tabs.nav-tabs > li {
-        display: block;
-        float: left; } }
-  .responsive-tabs.nav-tabs.open span.glyphicon.glyphicon-triangle-top {
-    display: block; }
-    @media (min-width: 768px) {
-      .responsive-tabs.nav-tabs.open span.glyphicon.glyphicon-triangle-top {
-        display: none; } }
-  .responsive-tabs.nav-tabs.open span.glyphicon.glyphicon-triangle-bottom {
-    display: none; }
-  .responsive-tabs.nav-tabs.open > li {
-    display: block; }
-    .responsive-tabs.nav-tabs.open > li a {
-      border-radius: 0; }
-    .responsive-tabs.nav-tabs.open > li:first-of-type a {
-      border-radius: 2px 2px 0 0; }
-    .responsive-tabs.nav-tabs.open > li:last-of-type a {
-      border-radius: 0 0 2px 2px; }
+    top: 4px; }
+  .nav-tabs-responsive .scroller-right {
+    right: 0; }
+  .nav-tabs-responsive .scroller-left {
+    left: 0; }
+  .nav-tabs-responsive .nav-tabs-responsive * {
+    box-sizing: border-box; }
+  @media (max-width: 480px) {
+    .nav-tabs-responsive .scroller-right, .nav-tabs-responsive .scroller-left {
+      display: none !important; } }
+  .nav-tabs-responsive .responsive-tabs.nav-tabs {
+    border-bottom: 1px solid #ddd;
+    user-select: none;
+    /*position: relative;
+    z-index: 10;
+    overflow: visible;
+    border-bottom: none;*/ }
+    .nav-tabs-responsive .responsive-tabs.nav-tabs.scroll-active a {
+      pointer-events: none; }
+    .nav-tabs-responsive .responsive-tabs.nav-tabs li a {
+      user-select: none;
+      -webkit-user-drag: none;
+      user-drag: none; }
+    @media (min-width: 480px) {
+      .nav-tabs-responsive .responsive-tabs.nav-tabs {
+        overflow: hidden;
+        white-space: nowrap; }
+        .nav-tabs-responsive .responsive-tabs.nav-tabs span.glyphicon {
+          display: none; }
+        .nav-tabs-responsive .responsive-tabs.nav-tabs > li {
+          display: inline-block;
+          float: none; } }
+    @media (max-width: 480px) {
+      .nav-tabs-responsive .responsive-tabs.nav-tabs span.glyphicon {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        padding: 14px;
+        color: #fff;
+        background: #222; }
+        .nav-tabs-responsive .responsive-tabs.nav-tabs span.glyphicon.glyphicon-triangle-top {
+          display: none; } }
+  @media (max-width: 480px) and (min-width: 480px) {
+    .nav-tabs-responsive .responsive-tabs.nav-tabs span.glyphicon {
+      display: none; } }
+    @media (max-width: 480px) {
+      .nav-tabs-responsive .responsive-tabs.nav-tabs > li {
+        display: none;
+        float: none;
+        text-align: center; }
+        .nav-tabs-responsive .responsive-tabs.nav-tabs > li:last-of-type > a {
+          margin-right: 0; }
+        .nav-tabs-responsive .responsive-tabs.nav-tabs > li > a {
+          margin-right: 0;
+          border: 1px solid #DDDDDD; } }
+    @media (max-width: 480px) and (min-width: 480px) {
+      .nav-tabs-responsive .responsive-tabs.nav-tabs > li > a {
+        /* margin-right: 4px;*/ } }
+    @media (max-width: 480px) {
+        .nav-tabs-responsive .responsive-tabs.nav-tabs > li.active {
+          display: block; }
+          .nav-tabs-responsive .responsive-tabs.nav-tabs > li.active a {
+            border: 1px solid #DDDDDD;
+            border-radius: 2px; } }
+      @media (max-width: 480px) and (min-width: 480px) {
+        .nav-tabs-responsive .responsive-tabs.nav-tabs > li.active a {
+          border-bottom-color: transparent; } }
+  @media (max-width: 480px) and (min-width: 480px) {
+    .nav-tabs-responsive .responsive-tabs.nav-tabs > li {
+      display: block;
+      float: left; } }
+    @media (max-width: 480px) {
+      .nav-tabs-responsive .responsive-tabs.nav-tabs.open span.glyphicon.glyphicon-triangle-top {
+        display: block; } }
+  @media (max-width: 480px) and (min-width: 480px) {
+    .nav-tabs-responsive .responsive-tabs.nav-tabs.open span.glyphicon.glyphicon-triangle-top {
+      display: none; } }
+    @media (max-width: 480px) {
+      .nav-tabs-responsive .responsive-tabs.nav-tabs.open span.glyphicon.glyphicon-triangle-bottom {
+        display: none; }
+      .nav-tabs-responsive .responsive-tabs.nav-tabs.open > li {
+        display: block; }
+        .nav-tabs-responsive .responsive-tabs.nav-tabs.open > li a {
+          border-radius: 0; }
+        .nav-tabs-responsive .responsive-tabs.nav-tabs.open > li:first-of-type a {
+          border-radius: 2px 2px 0 0; }
+        .nav-tabs-responsive .responsive-tabs.nav-tabs.open > li:last-of-type a {
+          border-radius: 0 0 2px 2px; } }
 
 /*# sourceMappingURL=tabs-responsive.css.map */
