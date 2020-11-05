@@ -1,5 +1,5 @@
 # kak-navmenu
-Sidebar, TopMenu widgets for Yii2
+Sidebar, TopMenu, Tabs, widgets for Yii2
 
 Preview
 -----------
@@ -22,7 +22,7 @@ or add
 
 to the require section of your `composer.json` file.
 
-Usage Sidebar
+Usage `Sidebar`
 -----
 Once the extension is installed, simply use it in your code by  :
 ```php
@@ -66,8 +66,18 @@ $context =  $this->context;
 </div>   
 ```
 
-Usage TopMenu
+Usage `Tabs` (responsive bootstrap tabs)
 -----
 
+```php
+use kak\widgets\navmenu\Tabs;
 
+echo Tabs::widget([
+    'options' => ['class' => 'nav nav-tabs '],
+    'items' => [
+        ['label' => 'Stat for Month', 'url' => ['month'], 'active' => true],
+        // ...
+    ]
+]);
+```
 
